@@ -34,7 +34,7 @@ label_64 = [] #list of all 64pcs labels
 #label_64_down = [] #list of all 64pcs labels
 SN_64 = [] #list the SN of all 64pcs sensor
 SN_diff = [] #list of how many different SN of connected sensors
-Location_SameSN = [] #list of location, same SN in one list, data format: [[], [], []].....
+#Location_SameSN = [] #list of location, same SN in one list, data format: [[], [], []].....
 
 
 
@@ -314,7 +314,7 @@ class GUI_DataShow():
             time.sleep(2)
             
             S.Start_Measurement()
-            time.sleep(0.4)
+            time.sleep(0.5)
                        
             S.Flag_SN = False
             
@@ -328,17 +328,17 @@ class GUI_DataShow():
             time.sleep(0.1)
             
             print("start to category the Serial Number")
-            print('SN number:', SN_64)
-            print('data_raw_64:', data_raw_64)
-            print('data_location:', data_location)
+            print('SN number:', SN_64, len(SN_64))
+            print('data_raw_64:', data_raw_64, len(data_raw_64))
+            print('data_location:', data_location, len(data_location))
             
-            # get SN list
-            SN_diff = []
-            for i in range(len(SN_64)):
-                if SN_64[i] not in SN_diff:
-                    SN_diff.append(SN_64[i])
-            
-            if(len(SN_64)==len(data_raw_64)):
+            if(len(SN_64)==len(data_raw_64)): 
+                # get SN list
+                SN_diff = []
+                for i in range(len(SN_64)):
+                    if SN_64[i] not in SN_diff:
+                        SN_diff.append(SN_64[i])
+
                 Location_SameSN = []
                 Data_SameSN = []
                 for i in range(len(SN_diff)):
