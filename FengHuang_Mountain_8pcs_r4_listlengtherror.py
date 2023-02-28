@@ -316,7 +316,7 @@ class GUI_DataShow():
             S.Start_Measurement()
             time.sleep(0.5)
                        
-            S.Flag_SN = False
+            # S.Flag_SN = False
             
             S.UpdateValues()
 
@@ -333,6 +333,7 @@ class GUI_DataShow():
             print('data_location:', data_location, len(data_location))
             
             if(len(SN_64)==len(data_raw_64)): 
+                print('here we go')
                 # get SN list
                 SN_diff = []
                 for i in range(len(SN_64)):

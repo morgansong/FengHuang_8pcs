@@ -37,12 +37,13 @@ while True:
     
     
     if count_low>=5 and count_high>=5 and curInput==0: 
-        print('voltage from high(5s) to low(5s), restarting')
-        os.system("sudo shutdown -h now")
-    
-    if count_high>=5 and count_low>=5 and curInput==1: 
-        print('voltage from low(5s) to high(5s), restarting')
+        print('voltage from high(5s) to low(5s), shutdown')
         os.system("sudo reboot")
+    
+    # if count_high>=5 and count_low>=5 and curInput==1: 
+        # print('voltage from low(5s) to high(5s), restarting')
+        #os.system("sudo shutdown -h now")
+        # os.system("sudo reboot")
     
     
     
